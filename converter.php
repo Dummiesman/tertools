@@ -125,12 +125,12 @@
     //write TER data
     for($y = 0; $y < $Ysize; $y++){
       for($x = 0; $x < $Xsize; $x++){
-        //GET RGB
+        //get rgb
         $rgb = imagecolorat($img,$x,$y);
         $r = ($rgb >> 16) & 0xFF;
         $g = ($rgb >> 8) & 0xFF;
         $b = $rgb & 0xFF;
-        //WRITE THE AVERAGE AS A USHORT
+        //write the average as a ushort
         $val = ((($r + $g + $b) / 3) / 255) * 65535;
         binaryWriteUShort($fh,$val);
       }
